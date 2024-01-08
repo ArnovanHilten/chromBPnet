@@ -21,6 +21,14 @@ def main():
 		os.makedirs(os.path.join(args.output_dir,"evaluation"), exist_ok=False)
 
 		pipelines.chrombpnet_train_pipeline(args)
+
+	elif args.cmd == "convert":
+		os.makedirs(os.path.join(args.output_dir,"logs"), exist_ok=False)
+		os.makedirs(os.path.join(args.output_dir,"auxiliary"), exist_ok=False)
+		os.makedirs(os.path.join(args.output_dir,"models"), exist_ok=False)
+		os.makedirs(os.path.join(args.output_dir,"evaluation"), exist_ok=False)
+
+		pipelines.convert_to_bam(args)
 	
 	elif args.cmd == "qc":
 		os.makedirs(os.path.join(args.output_dir,"auxiliary"), exist_ok=False)
